@@ -6,7 +6,7 @@ jobs:
   create-jira-ticket:
     runs-on: ubuntu-latest
     outputs:
-      pr_title: ${{ steps.update-pr-title-with-jira-id.pr_title }}
+      pr_title: ${{ steps.set-output.pr_title }}
     steps:
       - name: Set an output value
         id: set-output
