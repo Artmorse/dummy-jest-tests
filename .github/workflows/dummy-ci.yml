@@ -16,6 +16,7 @@ jobs:
           EOF
           )
           NEW_TITLE="[BEE-51275] - ${PR_TITLE}"
+          echo "NEW_TITLE=$NEW_TITLE"
           echo "pr_title=$NEW_TITLE" >> $GITHUB_OUTPUT
 
   pr-title-updater:
