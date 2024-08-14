@@ -3,7 +3,7 @@ name: Example Workflow 2
 on: [push]
 
 jobs:
-  first-job:
+  create-jira-ticket:
     runs-on: ubuntu-latest
     outputs:
       pr_title: ${{ steps.set-output.outputs.pr_title }}
@@ -14,8 +14,8 @@ jobs:
 
   second-job:
     runs-on: ubuntu-latest
-    needs: first-job
+    needs: create-jira-ticket
     steps:
-      - name: Use output from first-job
+      - name: Use output from create-jira-ticket
         run: |
-          echo "The value passed from first-job is: ${{ needs.first-job.outputs.pr_title }}"
+          echo "The value passed from create-jira-ticket is: ${{ needs.create-jira-ticket.outputs.pr_title }}"
