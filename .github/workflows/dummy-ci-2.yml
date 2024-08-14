@@ -6,7 +6,7 @@ jobs:
   first-job:
     runs-on: ubuntu-latest
     outputs:
-      myOutput: ${{ steps.set-output.outputs.pr_title }}
+      pr_title: ${{ steps.set-output.outputs.pr_title }}
     steps:
       - name: Set an output value
         id: set-output
@@ -18,4 +18,4 @@ jobs:
     steps:
       - name: Use output from first-job
         run: |
-          echo "The value passed from first-job is: ${{ needs.first-job.outputs.myOutput }}"
+          echo "The value passed from first-job is: ${{ needs.first-job.outputs.pr_title }}"
