@@ -6,11 +6,11 @@ jobs:
   first-job:
     runs-on: ubuntu-latest
     outputs:
-      myOutput: ${{ steps.set-output.outputs.myValue }}
+      myOutput: ${{ steps.set-output.outputs.pr_title }}
     steps:
       - name: Set an output value
         id: set-output
-        run: echo "myValue=Hello World" >> $GITHUB_OUTPUT
+        run: echo "pr_title=Hello World" >> $GITHUB_OUTPUT
 
   second-job:
     runs-on: ubuntu-latest
