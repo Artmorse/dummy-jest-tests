@@ -10,7 +10,10 @@ jobs:
     steps:
       - name: Set an output value
         id: set-output
-        run: echo "pr_title=Hello World" >> $GITHUB_OUTPUT
+        run: |
+          HW="Hello World"
+          A="[BEE-51275] - ${HW}" 
+          echo "pr_title=${A}" >> $GITHUB_OUTPUT
 
   second-job:
     runs-on: ubuntu-latest
