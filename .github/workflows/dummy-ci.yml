@@ -12,7 +12,7 @@ jobs:
         id: set-output
         run: |
           PR_TITLE=$(cat << 'EOF'
-          Upgrade blabla to blabla
+          Upgrade
           EOF
           )
           NEW_TITLE="[BEE-51275] - ${PR_TITLE}"
