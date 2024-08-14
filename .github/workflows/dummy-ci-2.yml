@@ -11,8 +11,12 @@ jobs:
       - name: Set an output value
         id: set-output
         run: |
+          PR_TITLE=$(cat << 'EOF'
+          Upgrade
+          EOF
+          )
           HW="Hello World"
-          A="[BEE-51275] - ${HW}" 
+          A="[BEE-51275] - ${HW} ${PR_TITLE}" 
           echo "pr_title=${A}" >> $GITHUB_OUTPUT
 
   second-job:
